@@ -5,28 +5,17 @@ const LinkedListNode = class {
     }
 };
 
-// Complete the function below
-
-function deleteNode(head, p) {
- 
- if(p==0){
-     head = head.next
-     return head
- }
- 
- let prev = null
- let c = 1
- let curr = head
- while(curr.next){
-    if(c==p+1){
-        prev.next =  curr.next
-        break;
-    }
-    prev = curr
-    curr = curr.next
-    c++
- }
- 
- return head
- 
-}
+var middleNode = function(head) {
+  
+  let s = head
+  let f = head
+  
+  while(f&&f.next){
+      s = s.next
+      f = f.next.next
+  }
+  
+  return s.data
+  
+   
+};
